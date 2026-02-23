@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // === Contact Form Handler ===
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const name = document.getElementById('name').value.trim();
@@ -160,25 +160,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!name || !email || !message) return;
 
-            // Build mailto or WhatsApp link
-            const subject = encodeURIComponent(`Contatto dal sito - ${name}`);
-            const body = encodeURIComponent(
-                `Nome: ${name}\nEmail: ${email}\nTelefono: ${phone || 'Non fornito'}\n\nMessaggio:\n${message}`
-            );
-
-            // Show success feedback
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalHTML = btn.innerHTML;
-            btn.innerHTML = '<span>Messaggio Pronto!</span> <i class="fas fa-check"></i>';
-            btn.style.background = '#2d8a4e';
+            btn.disabled = true;
+            btn.innerHTML = '<span>Invio in corso...</span> <i class="fas fa-spinner fa-spin"></i>';
 
-            // Open mailto
-            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+            try {
+                const response = await fetch('https://129.152.1.164:3001/api/v1/public/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, phone: phone || undefined, message }),
+                });
+
+                if (!response.ok) throw new Error('Errore invio');
+
+                btn.innerHTML = '<span>Messaggio Inviato!</span> <i class="fas fa-check"></i>';
+                btn.style.background = '#2d8a4e';
+                contactForm.reset();
+            } catch (err) {
+                btn.innerHTML = '<span>Errore, riprova</span> <i class="fas fa-times"></i>';
+                btn.style.background = '#dc3545';
+            }
 
             setTimeout(() => {
                 btn.innerHTML = originalHTML;
                 btn.style.background = '';
-                contactForm.reset();
+                btn.disabled = false;
             }, 3000);
         });
     }
