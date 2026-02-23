@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/gift-card.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -243,6 +244,8 @@
                         <ul>
                             <li><a href="index.html#negozi">I Nostri Negozi</a></li>
                             <li><a href="index.html#contatti">Contatti</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -256,7 +259,7 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 Grandi Firme di Fucà. Tutti i diritti riservati.</p>
+                <p>&copy; 2026 Grandi Firme di Fucà. Tutti i diritti riservati. | <a href="cookie-policy.html">Cookie Policy</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
@@ -500,5 +503,25 @@
         }
     })();
     </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Consenso cookie">
+        <div class="cookie-banner-inner">
+            <div class="cookie-banner-text">
+                Questo sito utilizza cookie tecnici necessari al funzionamento e, previo tuo consenso, cookie di terze parti (Google Maps) per mostrare le mappe dei negozi. Puoi accettare tutti i cookie o proseguire con i soli cookie necessari. Per maggiori informazioni consulta la <a href="cookie-policy.html">Cookie Policy</a> e la <a href="privacy-policy.html">Privacy Policy</a>.
+            </div>
+            <div class="cookie-banner-actions">
+                <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptAll">Accetta Tutti</button>
+                <button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectAll">Solo Necessari</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Gear Icon -->
+    <div id="cookieGear" class="cookie-gear" title="Preferenze cookie" aria-label="Modifica preferenze cookie">
+        <i class="fas fa-cookie-bite"></i>
+    </div>
+
+    <script src="js/cookie-consent.js"></script>
 </body>
 </html>

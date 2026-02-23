@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/gift-card.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
 </head>
 <body>
     <!-- Preloader -->
@@ -404,7 +405,11 @@
                         </div>
                     </div>
                     <div class="store-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.5!2d13.7265!3d37.4058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1310e5c0a0a0a0a1%3A0x1!2sVia+Garibaldi%2C+166%2C+Racalmuto+AG!5e0!3m2!1sit!2sit!4v1700000000000" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mappa Racalmuto"></iframe>
+                        <div class="map-placeholder" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.5!2d13.7265!3d37.4058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1310e5c0a0a0a0a1%3A0x1!2sVia+Garibaldi%2C+166%2C+Racalmuto+AG!5e0!3m2!1sit!2sit!4v1700000000000" data-title="Mappa Racalmuto">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>La mappa richiede l'accettazione dei cookie di Google Maps per essere visualizzata.</p>
+                            <button class="map-placeholder-btn" type="button">Accetta e mostra mappa</button>
+                        </div>
                     </div>
                 </div>
                 <div class="store-card" data-aos="fade-left">
@@ -425,7 +430,11 @@
                         </div>
                     </div>
                     <div class="store-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.5!2d13.6965!3d37.4017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1310e5c0a0a0a0a1%3A0x2!2sViale+della+Vittoria%2C+90%2C+Grotte+AG!5e0!3m2!1sit!2sit!4v1700000000000" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mappa Grotte"></iframe>
+                        <div class="map-placeholder" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.5!2d13.6965!3d37.4017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1310e5c0a0a0a0a1%3A0x2!2sViale+della+Vittoria%2C+90%2C+Grotte+AG!5e0!3m2!1sit!2sit!4v1700000000000" data-title="Mappa Grotte">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>La mappa richiede l'accettazione dei cookie di Google Maps per essere visualizzata.</p>
+                            <button class="map-placeholder-btn" type="button">Accetta e mostra mappa</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -589,6 +598,8 @@
                             <li><a href="#negozi">I Nostri Negozi</a></li>
                             <li><a href="#news">News</a></li>
                             <li><a href="#contatti">Contatti</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -602,7 +613,7 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 Grandi Firme di Fucà. Tutti i diritti riservati. | Titolare: Maria Rita Fucà</p>
+                <p>&copy; 2026 Grandi Firme di Fucà. Tutti i diritti riservati. | Titolare: Maria Rita Fucà | <a href="cookie-policy.html">Cookie Policy</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
@@ -617,6 +628,25 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Consenso cookie">
+        <div class="cookie-banner-inner">
+            <div class="cookie-banner-text">
+                Questo sito utilizza cookie tecnici necessari al funzionamento e, previo tuo consenso, cookie di terze parti (Google Maps) per mostrare le mappe dei negozi. Puoi accettare tutti i cookie o proseguire con i soli cookie necessari. Per maggiori informazioni consulta la <a href="cookie-policy.html">Cookie Policy</a> e la <a href="privacy-policy.html">Privacy Policy</a>.
+            </div>
+            <div class="cookie-banner-actions">
+                <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptAll">Accetta Tutti</button>
+                <button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectAll">Solo Necessari</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Gear Icon -->
+    <div id="cookieGear" class="cookie-gear" title="Preferenze cookie" aria-label="Modifica preferenze cookie">
+        <i class="fas fa-cookie-bite"></i>
+    </div>
+
     <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
 </body>
 </html>
