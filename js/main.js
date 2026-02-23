@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = '<span>Invio in corso...</span> <i class="fas fa-spinner fa-spin"></i>';
 
             try {
-                const response = await fetch('https://129.152.1.164:3001/api/v1/public/contact', {
+                const response = await fetch('http://129.152.1.164:3001/api/v1/public/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, phone: phone || undefined, message }),
