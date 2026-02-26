@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - Grandi Firme di Fucà</title>
+    <meta name="description" content="Changelog del sito grandifirmedifuca.it - Cronologia delle modifiche e aggiornamenti del sito.">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Grandi Firme</span>
+                <span class="logo-sub">di Fucà</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Apri menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#chi-siamo" class="nav-link">Chi Siamo</a></li>
+                <li><a href="index.html#brand" class="nav-link">Brand</a></li>
+                <li><a href="index.html#collezioni" class="nav-link">Collezioni</a></li>
+                <li><a href="index.html#promozioni" class="nav-link">Promozioni</a></li>
+                <li><a href="gift-card.html" class="nav-link">Gift Card</a></li>
+                <li><a href="index.html#negozi" class="nav-link">Negozi</a></li>
+                <li><a href="index.html#news" class="nav-link">News</a></li>
+                <li><a href="index.html#contatti" class="nav-link">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Changelog Content -->
+    <main class="policy-page">
+        <div class="policy-content">
+            <a href="index.html" class="policy-back"><i class="fas fa-arrow-left"></i> Torna alla Home</a>
+
+            <h1>Changelog</h1>
+            <p class="policy-updated">Cronologia delle modifiche al sito grandifirmedifuca.it</p>
+
+            <h2>v2.1 — Febbraio 2026</h2>
+            <ul>
+                <li>Aggiunta pagina Termini di Servizio</li>
+                <li>Aggiunta pagina Changelog</li>
+                <li>Integrazione con StockFlow ERP per la gestione centralizzata di prodotti, promozioni e Gift Card</li>
+                <li>Aggiornamento link nel footer con i nuovi riferimenti</li>
+            </ul>
+
+            <h2>v2.0 — Febbraio 2026</h2>
+            <ul>
+                <li>Restyling completo del sito con nuovo design responsive</li>
+                <li>Introduzione delle Gift Card digitali con pagamento tramite Stripe</li>
+                <li>Implementazione del sistema di Cookie Consent conforme al GDPR</li>
+                <li>Aggiunta Cookie Policy e Privacy Policy dettagliate</li>
+                <li>Integrazione Google Maps per la localizzazione dei punti vendita (con consenso cookie)</li>
+                <li>Nuovo sistema di navigazione con menu hamburger per dispositivi mobili</li>
+                <li>Pulsante WhatsApp per contatto rapido</li>
+            </ul>
+
+            <h2>v1.0 — 2025</h2>
+            <ul>
+                <li>Lancio del sito vetrina iniziale</li>
+                <li>Presentazione brand e collezioni disponibili nei negozi di Racalmuto e Grotte</li>
+                <li>Pagina informativa con orari e contatti dei punti vendita</li>
+            </ul>
+
+            <a href="index.html" class="policy-back"><i class="fas fa-arrow-left"></i> Torna alla Home</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Grandi Firme di Fucà. Tutti i diritti riservati. | <a href="cookie-policy.html">Cookie Policy</a> | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Termini di Servizio</a> | <a href="changelog.html">Changelog</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Consenso cookie">
+        <div class="cookie-banner-inner">
+            <div class="cookie-banner-text">
+                Questo sito utilizza cookie tecnici necessari al funzionamento e, previo tuo consenso, cookie di terze parti (Google Maps) per mostrare le mappe dei negozi. Puoi accettare tutti i cookie o proseguire con i soli cookie necessari. Per maggiori informazioni consulta la <a href="cookie-policy.html">Cookie Policy</a> e la <a href="privacy-policy.html">Privacy Policy</a>.
+            </div>
+            <div class="cookie-banner-actions">
+                <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptAll">Accetta Tutti</button>
+                <button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectAll">Solo Necessari</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Gear Icon -->
+    <div id="cookieGear" class="cookie-gear" title="Preferenze cookie" aria-label="Modifica preferenze cookie">
+        <i class="fas fa-cookie-bite"></i>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+</body>
+</html>
