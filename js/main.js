@@ -186,6 +186,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // === Dynamic News from JSON ===
+    const newsGrid = document.getElementById('news-grid');
+    if (newsGrid) {
+        fetch('data/notizie.json')
+            .then(r => r.json())
+            .then(notizie => {
+                if (!notizie || notizie.length === 0) {
+                    const newsSection = document.getElementById('news');
+                    if (newsSection) newsSection.style.display = 'none';
+                    return;
+                }
+                newsGrid.innerHTML = notizie.map((n, i) => {
+                    const linkHtml = n.links && n.links.length > 0
+                        ? `<a href="${n.links[0].url}" target="_blank" rel="noopener" class="news-link">${n.links[0].testo} <i class="fas fa-arrow-right"></i></a>`
+                        : '';
+                    return `<article class="news-card" data-aos="fade-up" data-aos-delay="${i * 100}">
+                    <div class="news-image">
+                        <div class="news-icon-placeholder" style="background:linear-gradient(135deg,#B8860B,#D4A84B);height:200px;display:flex;align-items:center;justify-content:center">
+                            <i class="fas fa-newspaper" style="font-size:3rem;color:rgba(255,255,255,0.3)"></i>
+                        </div>
+                        <span class="news-date">${n.data}</span>
+                    </div>
+                    <div class="news-body">
+                        <h3>${n.titolo}</h3>
+                        <p>${n.descrizione}</p>
+                        ${linkHtml}
+                    </div>
+                </article>`;
+                }).join('');
+                // Re-observe AOS for dynamically added elements
+                newsGrid.querySelectorAll('[data-aos]').forEach(el => {
+                    if (typeof aosObserver !== 'undefined') aosObserver.observe(el);
+                });
+            })
+            .catch(() => {
+                const newsSection = document.getElementById('news');
+                if (newsSection) newsSection.style.display = 'none';
+            });
+    }
+
     // === Parallax Effect for Promo Section ===
     const promoSection = document.querySelector('.section-promo');
     if (promoSection) {
